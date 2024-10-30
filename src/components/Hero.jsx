@@ -8,22 +8,22 @@ export default function Component() {
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
       
       <div className="relative mx-auto max-w-7xl px-4 pt-20 pb-20 text-center sm:px-6 lg:px-8">
-        <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-7xl">
-          Creativity, Unleashed.
+        <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl">
+          Learn. Create. Grow.
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/80">
-          Leverage generative AI with a unique suite of tools to convey your ideas to the world.
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-900/80">
+          Our mission is to empower every person and organization to harness the power of AI to learn, create, and grow.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
             href="#"
-            className="rounded-full bg-white/10 px-8 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+                className="rounded-full bg-gray-900/10 px-8 py-3 text-sm font-semibold text-gray-900 backdrop-blur-sm transition hover:bg-gray-900/20"
           >
             Get Started
           </a>
           <a
             href="#"
-            className="flex items-center text-sm font-semibold text-white"
+            className="flex items-center text-sm font-semibold text-gray-900"
           >
             Developer API <ArrowRight className="ml-2 h-4 w-4" />
           </a>
@@ -65,11 +65,11 @@ export default function Component() {
               key={index}
               className="group relative rounded-3xl bg-gray-900/30 p-8 backdrop-blur-sm transition hover:bg-gray-900/40"
             >
-              <h3 className="flex items-center text-xl font-semibold text-white">
+              <h3 className="flex items-center text-xl font-semibold text-gray-900">
                 {card.title}
                 <ArrowRight className="ml-2 h-4 w-4 opacity-0 transition group-hover:opacity-100" />
               </h3>
-              <p className="mt-4 text-sm text-white/70">{card.description}</p>
+              <p className="mt-4 text-sm text-gray-900/70">{card.description}</p>
             </div>
           ))}
         </div>
