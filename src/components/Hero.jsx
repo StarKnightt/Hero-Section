@@ -62,7 +62,7 @@ export default function Component() {
 
         <div ref={containerRef} className="relative mx-auto mt-16 max-w-5xl">
           <div 
-            className={`absolute -top-20 -left-20 w-64 md:-left-56 transition-all duration-1000 ease-out
+            className={`hidden md:block absolute -top-20 -left-20 w-64 md:-left-56 transition-all duration-1000 ease-out
               ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 -translate-x-full -translate-y-full'} 
               hover:scale-105 hover:-translate-y-2`}
             style={{ transitionDelay: '200ms' }}
@@ -74,7 +74,7 @@ export default function Component() {
             />
           </div>
           <div 
-            className={`absolute -top-20 -right-20 w-64 md:-right-56 transition-all duration-1000 ease-out
+            className={`hidden md:block absolute -top-20 -right-20 w-64 md:-right-56 transition-all duration-1000 ease-out
               ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 translate-x-full -translate-y-full'}
               hover:scale-105 hover:-translate-y-2`}
             style={{ transitionDelay: '400ms' }}
@@ -86,7 +86,7 @@ export default function Component() {
             />
           </div>
           <div 
-            className={`absolute -bottom-20 -left-20 w-64 md:-left-56 transition-all duration-1000 ease-out
+            className={`hidden md:block absolute -bottom-20 -left-20 w-64 md:-left-56 transition-all duration-1000 ease-out
               ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 -translate-x-full translate-y-full'}
               hover:scale-105 hover:translate-y-2`}
             style={{ transitionDelay: '600ms' }}
@@ -98,7 +98,7 @@ export default function Component() {
             />
           </div>
           <div 
-            className={`absolute -bottom-20 -right-20 w-64 md:-right-56 transition-all duration-1000 ease-out
+            className={`hidden md:block absolute -bottom-20 -right-20 w-64 md:-right-56 transition-all duration-1000 ease-out
               ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 translate-x-full translate-y-full'}
               hover:scale-105 hover:translate-y-2`}
             style={{ transitionDelay: '800ms' }}
