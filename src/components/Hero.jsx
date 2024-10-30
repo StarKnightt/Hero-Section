@@ -10,9 +10,7 @@ export default function Component() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-          }
+          setIsVisible(entry.isIntersecting)
         })
       },
       { 
@@ -96,7 +94,7 @@ export default function Component() {
             <img 
               src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=60" 
               alt="" 
-              className="aspect-square w-full -rotate-12 rounded-3xl border-4 border-blue-500/30 object-cover shadow-2xl shadow-blue-500/20"
+              className="aspect-square w-full -rotate-12 rounded-3xl border-4 border-blue-500/30 object-cover shadow-2l shadow-blue-500/20"
             />
           </div>
           <div 
