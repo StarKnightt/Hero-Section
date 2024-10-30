@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
+
 export default function Component() {
   const [isVisible, setIsVisible] = useState(false)
   const containerRef = useRef(null)
@@ -8,12 +9,16 @@ export default function Component() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+          }
+        })
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.2,
+        rootMargin: '50px'
+      }
     )
 
     if (containerRef.current) {
@@ -24,8 +29,16 @@ export default function Component() {
   }, [])
 
   return (
-    <div className="relative h-screen w-screen">
-      <svg className="absolute -z-10 -top-10 opacity-20" width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M3.25 10h13.5M10 3.25v13.5'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(258.5,59.4%,59.4%,1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(#a)'/></svg>
+    <div className="relative h-screen w-screen overflow-x-hidden">
+      <svg className="absolute -z-10 -top-10 opacity-20" width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'>
+        <defs>
+          <pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(2) rotate(0)'>
+            <rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/>
+            <path d='M3.25 10h13.5M10 3.25v13.5' strokeLinecap='square' strokeWidth='0.5' stroke='hsla(258.5,59.4%,59.4%,1)' fill='none'/>
+          </pattern>
+        </defs>
+        <rect width='800%' height='800%' transform='translate(0,0)' fill='url(#a)'/>
+      </svg>
       
       <div className="relative mx-auto max-w-7xl px-4 pt-20 pb-20 text-center sm:px-6 lg:px-8">
         <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl">
@@ -49,13 +62,12 @@ export default function Component() {
           </a>
         </div>
 
-        {/* App Preview Video with Corner Images */}
         <div ref={containerRef} className="relative mx-auto mt-16 max-w-5xl">
-          {/* Corner Images with Animation Classes */}
           <div 
-            className={`absolute -top-20 -left-20 w-64 md:-left-32 transition-all duration-1000 transform 
-              ${isVisible ? 'translate-x-0 translate-y-0' : '-translate-x-full -translate-y-full'} 
+            className={`absolute -top-20 -left-20 w-64 md:-left-32 transition-all duration-1000 ease-out
+              ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 -translate-x-full -translate-y-full'} 
               hover:scale-105 hover:-translate-y-2`}
+            style={{ transitionDelay: '200ms' }}
           >
             <img 
               src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=60" 
@@ -64,9 +76,10 @@ export default function Component() {
             />
           </div>
           <div 
-            className={`absolute -top-20 -right-20 w-64 md:-right-32 transition-all duration-1000 transform 
-              ${isVisible ? 'translate-x-0 translate-y-0' : 'translate-x-full -translate-y-full'}
+            className={`absolute -top-20 -right-20 w-64 md:-right-32 transition-all duration-1000 ease-out
+              ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 translate-x-full -translate-y-full'}
               hover:scale-105 hover:-translate-y-2`}
+            style={{ transitionDelay: '400ms' }}
           >
             <img 
               src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=60" 
@@ -75,9 +88,10 @@ export default function Component() {
             />
           </div>
           <div 
-            className={`absolute -bottom-20 -left-20 w-64 md:-left-32 transition-all duration-1000 transform 
-              ${isVisible ? 'translate-x-0 translate-y-0' : '-translate-x-full translate-y-full'}
+            className={`absolute -bottom-20 -left-20 w-64 md:-left-32 transition-all duration-1000 ease-out
+              ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 -translate-x-full translate-y-full'}
               hover:scale-105 hover:translate-y-2`}
+            style={{ transitionDelay: '600ms' }}
           >
             <img 
               src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=60" 
@@ -86,9 +100,10 @@ export default function Component() {
             />
           </div>
           <div 
-            className={`absolute -bottom-20 -right-20 w-64 md:-right-32 transition-all duration-1000 transform 
-              ${isVisible ? 'translate-x-0 translate-y-0' : 'translate-x-full translate-y-full'}
+            className={`absolute -bottom-20 -right-20 w-64 md:-right-32 transition-all duration-1000 ease-out
+              ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 translate-x-full translate-y-full'}
               hover:scale-105 hover:translate-y-2`}
+            style={{ transitionDelay: '800ms' }}
           >
             <img 
               src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&auto=format&fit=crop&q=60" 
@@ -97,9 +112,11 @@ export default function Component() {
             />
           </div>
           
-          {/* Main Video Container */}
-          <div className={`rounded-[2.5rem] bg-gray-900/40 p-4 backdrop-blur-xl transition-all duration-1000 transform
-            ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-32 opacity-0'}`}>
+          <div 
+            className={`rounded-[2.5rem] bg-gray-900/40 p-4 backdrop-blur-xl transition-all duration-1000 ease-out
+              ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-32 scale-95'}`}
+            style={{ transitionDelay: '1000ms' }}
+          >
             <video 
               className="w-full rounded-[2rem] shadow-2xl"
               autoPlay 
@@ -113,7 +130,6 @@ export default function Component() {
           </div>
         </div>
 
-        {/* Feature Cards */}
         <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
