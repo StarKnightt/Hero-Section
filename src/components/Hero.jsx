@@ -65,7 +65,7 @@ export default function Component() {
             className={`hidden md:block absolute -top-20 -left-20 w-64 md:-left-56 transition-all duration-1000 ease-out
               ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 -translate-x-full -translate-y-full'} 
               hover:scale-105 hover:-translate-y-2`}
-            style={{ transitionDelay: '200ms' }}
+            style={{ transitionDelay: '200ms', zIndex: 1 }}
           >
             <img 
               src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=60" 
@@ -77,7 +77,7 @@ export default function Component() {
             className={`hidden md:block absolute -top-20 -right-20 w-64 md:-right-56 transition-all duration-1000 ease-out
               ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 translate-x-full -translate-y-full'}
               hover:scale-105 hover:-translate-y-2`}
-            style={{ transitionDelay: '400ms' }}
+            style={{ transitionDelay: '400ms', zIndex: 1 }}
           >
             <img 
               src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=60" 
@@ -89,7 +89,7 @@ export default function Component() {
             className={`hidden md:block absolute -bottom-20 -left-20 w-64 md:-left-56 transition-all duration-1000 ease-out
               ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 -translate-x-full translate-y-full'}
               hover:scale-105 hover:translate-y-2`}
-            style={{ transitionDelay: '600ms' }}
+            style={{ transitionDelay: '600ms', zIndex: 1 }}
           >
             <img 
               src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=60" 
@@ -101,7 +101,7 @@ export default function Component() {
             className={`hidden md:block absolute -bottom-20 -right-20 w-64 md:-right-56 transition-all duration-1000 ease-out
               ${isVisible ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 translate-x-full translate-y-full'}
               hover:scale-105 hover:translate-y-2`}
-            style={{ transitionDelay: '800ms' }}
+            style={{ transitionDelay: '800ms', zIndex: 1 }}
           >
             <img 
               src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&auto=format&fit=crop&q=60" 
@@ -113,7 +113,7 @@ export default function Component() {
           <div 
             className={`rounded-[2.5rem] bg-gray-900/40 p-4 backdrop-blur-xl transition-all duration-1000 ease-out
               ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-32 scale-95'}`}
-            style={{ transitionDelay: '1000ms' }}
+            style={{ transitionDelay: '1000ms', zIndex: 2 }}
           >
             <video 
               className="w-full rounded-[2rem] shadow-2xl"
